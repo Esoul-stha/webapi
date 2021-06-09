@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 import json
 from flask import Flask, jsonify, request, render_template
+from flask_cors import CORS
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup 
 import requests
@@ -11,6 +12,7 @@ from dotenv import load_dotenv
 import re
 
 app = Flask(__name__)
+CORS(app)
 
 # 店舗名と店舗コードに関わるコード
  load_dotenv()
