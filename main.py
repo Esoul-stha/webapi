@@ -1,19 +1,12 @@
+import re, requests
+from flask import Flask, jsonify
+from flask_cors import CORS
+from bs4 import BeautifulSoup 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
-import json
-from flask import Flask, jsonify, request, render_template
-from flask_cors import CORS
-from requests_html import HTMLSession
-from bs4 import BeautifulSoup 
-import requests
-import os
-from dotenv import load_dotenv
-import re
 
 app = Flask(__name__)
 CORS(app)
-
 
 # GET /stores
 @app.route('/stores')
